@@ -1,0 +1,34 @@
+server:
+  port: 9007
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: Employee
+          uri: lb://Employee
+          predicates:
+            - Path=/employees/**
+        - id: Customer
+            uri: lb://Customer
+            predicates:
+              - Path=/customers/**
+        - id: Product
+            uri: lb://Product
+            predicates:
+              - Path=/products/**
+        - id: Order
+            uri: lb://Order
+            predicates:
+              - Path=/orders/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
