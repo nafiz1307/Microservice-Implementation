@@ -15,7 +15,7 @@ public class EmployeeController {
     public Employee saveEmployee(@RequestBody Employee employee){
         return employeeService.saveEmployee(employee);
     }
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public Employee findEmployeeById(@PathVariable("id") String employeeId){
         return employeeService.findEmployeeById(employeeId);
     }
