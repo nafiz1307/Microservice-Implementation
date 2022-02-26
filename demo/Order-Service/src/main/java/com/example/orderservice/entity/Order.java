@@ -16,7 +16,11 @@ public class Order {
     @Id
     private String id;
     @Field
-    private String quantity;
+    private String date;
     @Field
-    private String totalPrice;
+    private String customerId;
+    @Field
+    private String productId;
+    @Field
+    private String employeeId;
 }
